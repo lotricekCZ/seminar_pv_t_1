@@ -16,47 +16,32 @@ void get_dividor(std::vector<uint> * root_vector, uint input, uint start = 0, ui
 		}
 	}
 
-bool is_primary(int num){
-	int numberOfDividors = 0;
-	for(int i = 2; i <= num; i++){
-		if(num % i == 0){
-			numberOfDividors++;
-			}
-		}
-	return numberOfDividors > 1;
+bool is_primary(std::vector<uint> dividors){
+	return dividors.size() <= 2;
 	}
 
 std::vector<uint> get_dividors(uint input = 666){
-	std::vector<uint> dividors = {};
-	uint th = 16;
-	std::cout << "vlaken: " << th + 1;
-	std::vector<std::future<void>> threads;
-	
-	if(input > (1 << 20)){
-		//~ std::cout << "hyperenter" << std::endl;
-		for(uint i = 0; i < th+1; i++){
-			std::async(get_dividor, &dividors, input, input/th*i+1, min(input/th*(i+1), input));
+	std::vector<uint> dividors = {};	
+	for(uint i = 1; i <= input; i++){
+		if(input % i == 0){
+			dividors.push_back(i);
 			}
 		}
 		
-	else{
-			
-		for(uint i = 1; i <= input; i++){
-			if(input % i == 0){
-				dividors.push_back(i);
-				}
-			}
-		}
 	return dividors;
 	}
 
 int main(int argc, char *argv[]){
 	auto start = std::chrono::steady_clock::now();
 	
-	for(int v: get_dividors((argc != 0? atoi(argv[1]): 1024))){
+	std::vector<uint> dividors = get_dividors(argc != 1? atoi(argv[1]): 1024);
+	
+	for(uint v: dividors){
 		std::cout << v << std::endl;
 		}
-		
+	
+	std::cout << (is_primary(dividors)? "Je to prvocislo": "neni to prvocislo") << std::endl;
+	
 	auto end = std::chrono::steady_clock::now();
 	std::chrono::duration<double> elapsed_seconds = end - start;
 	std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
