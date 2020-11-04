@@ -31,7 +31,17 @@ class pi{
 			}
 		return pi;
 		}
-
+	
+	/**
+	* Gives us a pi
+	*
+	* This is the calculation of pi according
+	* to a Leibniz series.
+	*
+	* @param primary numbers.
+	* @return pi.
+	*/
+	
 	static double leibniz(vector<uint32_t> input){
 		double pi = 4;
 		bool sign = 0;
