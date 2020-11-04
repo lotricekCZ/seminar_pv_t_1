@@ -4,6 +4,7 @@
 using namespace std;
 class pi{
 	public:
+	
 	/**
 	* Gives us a pi
 	*
@@ -13,6 +14,7 @@ class pi{
 	* @param number until which the cycle continues.
 	* @return pi.
 	*/
+	
 	static double nilakantha(uint64_t input){
 		//~ mpz_class pi("3");
 		double pi = 3.0;
@@ -40,8 +42,9 @@ class pi{
 				}else{
 					pi -= (double)(4.0 / i);
 				}
-			std::cout << pi << " "<< i << std::endl;
-			sign ++;
+			//~ std::cout << pi << " "<< i << std::endl;
+			sign = !sign;
 			}
+		return pi;
 		}
 };
