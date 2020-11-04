@@ -1,0 +1,18 @@
+Vice zde: https://github.com/lotricekCZ/seminar_pv_t_1/blob/main/task_1_primary_numbers_dividors/main.cpp
+
+#include <vector>
+
+bool is_primary(std::vector<uint> dividors){
+	return dividors.size() <= 2;
+	}
+
+std::vector<uint> get_dividors(uint input = 666){
+	std::vector<uint> dividors = {};	
+	for(uint i = 1; i <= input; i++){
+		if(input % i == 0){
+			dividors.push_back(i);
+			}
+		}
+		
+	return dividors;
+	}
