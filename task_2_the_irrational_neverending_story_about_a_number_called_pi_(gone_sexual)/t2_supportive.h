@@ -2,6 +2,7 @@
 #include <vector>
 //~ #include <gmpxx.h>
 using namespace std;
+
 class pi{
 	public:
 	
@@ -27,7 +28,7 @@ class pi{
 					pi -= (double)(4.0 / ((i - 2) * (i - 1) * i));
 				}
 			//~ pi += (double)((sign++)?1.0:(-1.0))*(4.0 / ((i - 2) * (i - 1) * i));
-			std::cout << pi << std::endl;
+			//~ std::cout << pi << std::endl;
 			}
 		return pi;
 		}
@@ -43,18 +44,18 @@ class pi{
 	*/
 	
 	static double leibniz(vector<uint32_t> input){
-		double pi = 4;
+		double pi = 1;
 		bool sign = 0;
 		for(uint i : input){
 			
 			if(sign){
-					pi += (double)(4.0 / i);
+					pi += (double)(1.0 / i);
 				}else{
-					pi -= (double)(4.0 / i);
+					pi -= (double)(1.0 / i);
 				}
 			//~ std::cout << pi << " "<< i << std::endl;
 			sign = !sign;
 			}
-		return pi;
+		return pi*4;
 		}
 };

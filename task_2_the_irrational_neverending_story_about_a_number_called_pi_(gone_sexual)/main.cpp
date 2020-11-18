@@ -11,7 +11,8 @@
 int main(int argc, char *argv[]){
 	auto start = std::chrono::steady_clock::now();
 	
-	std::cout << pi::leibniz(get_primars(60)) << std::endl;
+	std::cout << pi::leibniz(get_primars(6000)) << std::endl;
+	std::cout << pi::nilakantha(60000) << std::endl;
 	
 	auto end = std::chrono::steady_clock::now();
 	std::chrono::duration<double> elapsed_seconds = end - start;

@@ -1,0 +1,19 @@
+Další zvěrstva zde: 
+
+template <typename T, typename S>
+void turn_around(T *(array), S size){
+	for(auto i = 0; i < ((size / 2)); i++){
+		
+		T pre = array[size - (i + 1)];
+		array[size - (i + 1)] = array[i];
+		array[i] = pre;
+		}
+
+	}
+
+A volání funkce:
+	int32_t pole[] = {1, 4, 6, 8, 2, 9, 5, 2, 1, 5};
+	turn_around(pole, sizeof(pole) / sizeof(pole[0]));
+
+dependencies:
+	#include <inttypes.h>
