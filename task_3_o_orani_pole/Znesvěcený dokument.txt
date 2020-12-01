@@ -1,4 +1,4 @@
-Další zvěrstva zde: 
+Další zvěrstva zde: https://github.com/lotricekCZ/seminar_pv_t_1/tree/main/task_3_o_orani_pole
 
 template <typename T, typename S>
 void turn_around(T *(array), S size){

@@ -1,0 +1,24 @@
+Další zvěrstva zde: https://github.com/lotricekCZ/seminar_pv_t_1/tree/main/task_4_jak_uzs_se_na_to_przemysl_oracz_vyszral
+
+template <typename T, typename S>
+void insert_sort(T *(array), S size){
+	for (auto i = 0; i < size - 1; i++) {
+        auto j = i + 1;
+        T temp = array[j];
+        while (j > 0 && temp < array[j-1]) {
+            array[j] = array[j-1];
+            j--;
+			}
+        array[j] = temp;
+		}
+		//~ std::cout << std::endl << size << std::endl;
+		//~ std::cout << std::endl;
+	
+	}
+
+A volání funkce:
+	int32_t pole[] = {1, 4, 6, 8, 2, 9, 5, 2, 1, 5};
+	insert_sort(pole, sizeof(pole) / sizeof(pole[0]));
+
+dependencies:
+	#include <inttypes.h>
